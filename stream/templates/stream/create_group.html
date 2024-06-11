@@ -5,16 +5,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
-    <div class="container mx-auto p-4">
-        <h1 class="text-3xl font-bold mb-4">Create Group</h1>
-        <form method="POST" action="" class="bg-white p-6 rounded shadow-md">
+    <div class="container mx-auto p-6">
+        <h1 class="text-4xl font-bold mb-6 text-center">Create Group</h1>
+        <form method="POST" action="" class="bg-white p-6 rounded shadow-md max-w-md mx-auto">
             {% csrf_token %}
             <div class="mb-4">
-                <input type="text" name="group" placeholder="Enter Group Name" class="w-full p-2 border border-gray-300 rounded">
+                <input type="text" name="group" placeholder="Enter Group Name" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Create</button>
+            <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded shadow hover:bg-blue-700">Create</button>
         </form>
-        <a href="{% url 'index' %}" class="mt-4 inline-block text-blue-500 hover:underline">Back to Groups</a>
+        <div class="text-center mt-6">
+            <a href="{% url 'index' %}" class="text-blue-500 hover:underline">Back to Groups</a>
+        </div>
     </div>
 </body>
 </html>
