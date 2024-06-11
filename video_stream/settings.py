@@ -42,16 +42,6 @@ INSTALLED_APPS = [
     "channels",
 ]
 
-# settings.py
-
-RTSP_URLS = [
-    # 'rtsp://rtspstream:61101fa39bb5a8c8b0994797aade10e7@zephyr.rtsp.stream/movie',
-    # 'rtsp://rtspstream:a8d0b30537a092793ef1dde67f440ad9@zephyr.rtsp.stream/pattern'
-    'rtsp://rtspstream:73a3a00dfc03d23b6a54dc7af6655730@zephyr.rtsp.stream/movie',
-    # 'rtsp://rtspstream:e0530e0e142ba8b0f4ca219922522c0e@zephyr.rtsp.stream/pattern'
-]
-
-
 ASGI_APPLICATION = 'video_stream.asgi.application'
 CHANNEL_LAYERS={
     "default": {
