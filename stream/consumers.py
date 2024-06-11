@@ -4,6 +4,10 @@ import numpy as np
 from channels.generic.websocket import AsyncWebsocketConsumer
 import asyncio
 
+import os
+
+os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;udp"
+
 class VideoStreamConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         await self.accept()
@@ -13,7 +17,7 @@ class VideoStreamConsumer(AsyncWebsocketConsumer):
 
     async def receive(self, text_data):
         video_link = text_data
-        cap = cv2.VideoCapture(video_link)
+        cap = cv2.VideoCapture(video_link, cv2.CAP_FFMPEG)
         if not cap.isOpened():
             await self.send(text_data="Error: Unable to open video stream.")
             return
